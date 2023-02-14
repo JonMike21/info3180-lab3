@@ -1,3 +1,23 @@
 body {
     padding-top: 5rem;
 }
+
+.btn{
+    background-color: rgb(13, 110, 253);
+    padding: 7px;
+    color: white;
+}
+
+.lbl,.req{
+    font-weight: bold;
+}
+
+.req{
+    color: rgb(207, 23, 45);
+}
+
+.container .flashes li{
+    color: rgb(33, 220, 102);
+    list-style: none;
+    font-size: 24px;
+}

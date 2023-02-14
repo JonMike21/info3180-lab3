@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<h1>Contact Form</h1>
+<hr>
+
+<p>Fill in this form to contact the site owners</p>
+
+<form action="/contact" method="post">
+     <!-- 
+    <div class="inpt">
+        <label for="name" class="lbl">Name</label>
+        <input type="text" class="form-control" name="name" id="name" />
+    </div>
+    <div class="inpt">
+        <label for="email" class="lbl">E-mail</label>
+        <input type="email" class="form-control" name="email" id="email" placeholder="iamsad@gmail.com" />
+    </div>
+
+    <div class="inpt">
+        <label for="subject" class="lbl">Subject</label>
+        <input type="text" class="form-control" name="subject" id="subject" />
+    </div>
+    
+    <div class="inpt">
+        <label for="message" class="lbl">Message</label>
+        <textarea type="message" class="form-control" name="message" id="message" rows="4"></textarea>
+    </div>
+
+    <button type="submit" class="btn">Submit</button>  
+    --> 
+        {{ form.csrf_token }}
+    
+        <div class="form-label">
+            {{ form.name.label(class="lbl")}}  {{ form.required.label(class="req")}}
+            <p>Please enter your full name</p>
+            {{ form.name(class="form-control") }}
+        </div>
+
+        <div class="form-label">
+            {{ form.email.label(class="lbl") }} {{ form.required.label(class="req")}}
+            <p>Please enter your e-mail address</p>
+            {{ form.email(class="form-control", placeholder="iamsad@gmail.com") }}
+        </div>
+        
+
+        <div class="form-label">
+          {{ form.subject.label(class="lbl") }} {{ form.required.label(class="req")}}
+          <p>Please enter the subject for your message</p>
+          {{ form.subject(class="form-control") }}
+        </div>
+        
+
+        <div class="form-label">
+            {{ form.message.label(class="lbl") }} {{ form.required.label(class="req")}}
+            <p>Please enter the message you would like to send</p>
+            {{ form.message(class="form-control", rows="4") }}
+        </div>
+        
+        <button type="submit" class="btn">Submit</button>  
+
+</form>
+{% endblock %}
+
+
